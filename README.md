@@ -1,21 +1,23 @@
-# Reamer Workload Templates
+# Rust Template
 
-This repository provides Nix flake templates.
+After initializing a project from this template:
 
-Published repository: `https://github.com/amphi/reamer-workload-templates`
+1. Run `cargo init --name="user provided name"`
+2. Run `cargo build` at least once to create `Cargo.lock`
+3. Commit all files to git, otherwise `nix build` will not work
 
-## Available Templates
+## Useful Commands
 
-- `rust` - Rust flake template
+- `nix develop` to enter the development shell
+- `nix build` to build the project with Nix
+- `cargo check` for a fast Rust-only validation pass
 
-## Usage
+## Project Layout
 
-Initialize a new project from the template using the GitHub flake reference:
+- Put your application code in `src/main.rs`
+- Keep the flake at the repository root
 
-```bash
-nix flake init -t github:amphi/reamer-workload-templates#rust
-```
+## Notes
 
-`nix flake init` is typically run in an empty or new project directory.
-
-After initializing, check README.md for template-specific details.
+- This template expects the repository to be under git version control
+- If you change the package name, make sure it stays consistent with the Cargo project name
